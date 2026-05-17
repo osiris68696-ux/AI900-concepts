@@ -504,6 +504,7 @@ const els = {
   conceptList: document.querySelector("#conceptList"),
   speakCurrentBtn: document.querySelector("#speakCurrentBtn"),
   stopBtn: document.querySelector("#stopBtn"),
+  voiceSelect: document.querySelector("#voiceSelect"),
   feedback: document.querySelector("#feedback"),
   topicList: document.querySelector("#topicList")
 };
@@ -608,7 +609,7 @@ function stopSpeech(message = "已停止朗讀。") {
     window.speechSynthesis.cancel();
   }
 
-  els.voiceStatus.textContent = "點擊朗讀";
+  els.voiceStatus.textContent = "溫柔動畫感";
   els.feedback.textContent = message;
 }
 
@@ -659,12 +660,62 @@ function pickPreferredVoice() {
   }
 
   const voices = window.speechSynthesis.getVoices();
-  const preferredNames = ["HsiaoChen", "Hanhan", "Yating", "Microsoft HsiaoChen", "Microsoft Hanhan", "Google 國語"];
+  const selectedVoiceName = localStorage.getItem("ai900VoiceName");
+  if (selectedVoiceName) {
+    const selectedVoice = voices.find((voice) => voice.name === selectedVoiceName);
+    if (selectedVoice) {
+      return selectedVoice;
+    }
+  }
+
+  const preferredNames = [
+    "HsiaoChen",
+    "Hanhan",
+    "Yating",
+    "Xiaoxiao",
+    "Xiaoyi",
+    "Microsoft HsiaoChen",
+    "Microsoft Hanhan",
+    "Microsoft Yating",
+    "Microsoft Xiaoxiao",
+    "Google 國語",
+    "Google 普通话",
+    "Google 中文"
+  ];
 
   return voices.find((voice) => preferredNames.some((name) => voice.name.includes(name)))
     || voices.find((voice) => voice.lang === "zh-TW")
+    || voices.find((voice) => voice.lang === "zh-CN")
     || voices.find((voice) => voice.lang.startsWith("zh"))
     || null;
+}
+
+function populateVoiceSelect() {
+  if (!("speechSynthesis" in window) || !els.voiceSelect) {
+    return;
+  }
+
+  const voices = window.speechSynthesis.getVoices();
+  const selectedVoiceName = localStorage.getItem("ai900VoiceName") || "";
+  const usefulVoices = voices
+    .filter((voice) => voice.lang.startsWith("zh") || /Chinese|Mandarin|Taiwan|Hong Kong|中文|國語|普通话/i.test(voice.name))
+    .sort((a, b) => a.lang.localeCompare(b.lang) || a.name.localeCompare(b.name));
+
+  els.voiceSelect.innerHTML = '<option value="">自動選擇中文女聲</option>';
+  usefulVoices.forEach((voice) => {
+    const option = document.createElement("option");
+    option.value = voice.name;
+    option.textContent = `${voice.name} (${voice.lang})`;
+    option.selected = voice.name === selectedVoiceName;
+    els.voiceSelect.appendChild(option);
+  });
+
+  if (!selectedVoiceName) {
+    const autoVoice = pickPreferredVoice();
+    if (autoVoice) {
+      els.voiceSelect.options[0].textContent = `自動：${autoVoice.name} (${autoVoice.lang})`;
+    }
+  }
 }
 
 const previousSpeak = speak;
@@ -693,22 +744,22 @@ function speakWithBrightVoice(text) {
     } else {
       utterance.lang = "zh-TW";
     }
-    utterance.rate = 0.96;
-    utterance.pitch = 1.28;
+    utterance.rate = 0.92;
+    utterance.pitch = 1.65;
     utterance.volume = 1;
     utterance.onstart = () => {
       if (runId === speechRunId) {
-        els.voiceStatus.textContent = "明亮朗讀中";
+        els.voiceStatus.textContent = "溫柔動畫感朗讀中";
       }
     };
     utterance.onend = () => {
       if (runId === speechRunId) {
-        els.voiceStatus.textContent = "點擊朗讀";
+        els.voiceStatus.textContent = "溫柔動畫感";
       }
     };
     utterance.onerror = () => {
       if (runId === speechRunId) {
-        els.voiceStatus.textContent = "點擊朗讀";
+        els.voiceStatus.textContent = "溫柔動畫感";
         els.feedback.textContent = "朗讀被中止，可以再點一次概念。";
       }
     };
@@ -718,6 +769,25 @@ function speakWithBrightVoice(text) {
 }
 
 speak = speakWithBrightVoice;
+
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    populateVoiceSelect();
+  };
+}
+
+if (els.voiceSelect) {
+  els.voiceSelect.addEventListener("change", () => {
+    if (els.voiceSelect.value) {
+      localStorage.setItem("ai900VoiceName", els.voiceSelect.value);
+      els.feedback.textContent = `已切換聲音：${els.voiceSelect.value}`;
+    } else {
+      localStorage.removeItem("ai900VoiceName");
+      els.feedback.textContent = "已改回自動選擇中文女聲。";
+    }
+    stopSpeech(els.feedback.textContent);
+  });
+}
 
 els.stopBtn.addEventListener("click", () => {
   stopSpeech();
@@ -731,4 +801,5 @@ window.addEventListener("beforeunload", () => {
 
 renderTopics();
 renderConcepts();
+populateVoiceSelect();
 selectConcept(0, false);

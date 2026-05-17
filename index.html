@@ -32,7 +32,7 @@
           </div>
           <div>
             <span>模式</span>
-            <strong id="voiceStatus">點擊朗讀</strong>
+            <strong id="voiceStatus">溫柔動畫感</strong>
           </div>
         </div>
 
@@ -45,6 +45,12 @@
         <div class="answer-box concept-actions">
           <button id="speakCurrentBtn" class="primary" type="button">朗讀目前概念</button>
           <button id="stopBtn" type="button">停止朗讀</button>
+          <label class="voice-picker">
+            <span>聲音</span>
+            <select id="voiceSelect" aria-label="選擇朗讀聲音">
+              <option value="">自動選擇中文女聲</option>
+            </select>
+          </label>
         </div>
 
         <div class="concept-list" id="conceptList" aria-label="AI-900 必考概念清單"></div>

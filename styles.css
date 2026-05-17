@@ -295,6 +295,32 @@ button.primary:hover:not(:disabled) {
   color: #fff;
 }
 
+.voice-picker {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.voice-picker select {
+  min-height: 44px;
+  max-width: min(420px, 100%);
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  padding: 0 12px;
+  font: inherit;
+  font-weight: 600;
+}
+
+.voice-picker select:focus {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(23, 104, 172, 0.14);
+}
+
 .feedback {
   min-height: 58px;
   border: 1px solid var(--line);
