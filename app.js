@@ -43,6 +43,24 @@ const concepts = [
   },
   {
     category: "AI 與機器學習生命週期",
+    name: "模型評估",
+    english: "Model Evaluation",
+    description: "使用驗證集或測試集與評估指標檢查模型效能，例如 Accuracy、Precision、Recall、AUC 或混淆矩陣。"
+  },
+  {
+    category: "AI 與機器學習生命週期",
+    name: "特徵工程",
+    english: "Feature Engineering",
+    description: "建立、轉換或整理輸入特徵，讓模型更容易從資料中學到有用規律。"
+  },
+  {
+    category: "AI 與機器學習生命週期",
+    name: "特徵選取",
+    english: "Feature Selection",
+    description: "從所有可用特徵中挑選最有用的特徵，減少雜訊、降低複雜度並改善模型表現。"
+  },
+  {
+    category: "AI 與機器學習生命週期",
     name: "混淆矩陣",
     english: "Confusion Matrix",
     description: "用 0 和 1 的網格或表格顯示分類模型的預測結果與實際正負值，用來看 True Positive、False Positive、True Negative、False Negative。"
