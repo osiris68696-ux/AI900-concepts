@@ -505,6 +505,24 @@ const concepts = [
   },
   {
     category: "生成式 AI 與 Azure OpenAI",
+    name: "OpenAI Codex 模型",
+    english: "OpenAI Codex Model",
+    description: "早期專門用於程式碼生成與程式碼補全的 OpenAI 模型。AI-900 舊題可能提到 GitHub Copilot 在 Visual Studio Code 中使用 Codex。"
+  },
+  {
+    category: "生成式 AI 與 Azure OpenAI",
+    name: "GitHub Copilot",
+    english: "GitHub Copilot",
+    description: "開發者的 AI 程式碼輔助工具，可在 Visual Studio Code 等 IDE 中提供程式碼建議、補全與生成。舊題常連到 OpenAI Codex。"
+  },
+  {
+    category: "生成式 AI 與 Azure OpenAI",
+    name: "Visual Studio Code",
+    english: "Visual Studio Code / VS Code",
+    description: "常見程式碼編輯器，可安裝 GitHub Copilot 延伸模組來取得 AI 程式碼建議。"
+  },
+  {
+    category: "生成式 AI 與 Azure OpenAI",
     name: "溫度",
     english: "Temperature",
     description: "控制生成結果隨機性的參數。越低越穩定，越高越有創意。"
