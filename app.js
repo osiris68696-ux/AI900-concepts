@@ -7,6 +7,12 @@ const concepts = [
   },
   {
     category: "AI 與機器學習生命週期",
+    name: "類別型標籤",
+    english: "Categorical Label",
+    description: "分類模型的標籤必須是類別型資料，例如詐騙或非詐騙、垃圾郵件或非垃圾郵件。若標籤是連續數值，通常是迴歸問題。"
+  },
+  {
+    category: "AI 與機器學習生命週期",
     name: "特徵",
     english: "Features",
     description: "輸入給 AI 或機器學習模型的數據與指標，例如房子的坪數、車齡、收入或地區。"
