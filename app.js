@@ -327,7 +327,7 @@ const concepts = [
     category: "Azure ML 與 AI 服務工具箱",
     name: "運算資源",
     english: "Compute Resources",
-    description: "Azure Machine Learning 中用來執行訓練、實驗或推論的運算環境，例如 CPU 或 GPU compute。"
+    description: "Azure Machine Learning 中用來執行訓練、實驗、Designer 管線或推論的運算環境。若要執行 Designer pipeline，通常要先建立或選擇 compute resource。"
   },
   {
     category: "Azure ML 與 AI 服務工具箱",
@@ -376,6 +376,18 @@ const concepts = [
     name: "筆記本",
     english: "Notebooks",
     description: "Azure Machine Learning Studio 內建的 Jupyter 環境，供資料科學家手寫 Python 或 R 程式碼。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "Jupyter Notebook",
+    english: "Jupyter Notebook",
+    description: "互動式程式碼筆記本，常用於資料探索與手寫 Python 程式。它不是執行 Designer 管線前必須先建立的資源。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "已註冊模型",
+    english: "Registered Model",
+    description: "已訓練並註冊到 Azure Machine Learning 的模型，可用於版本控管與部署。它通常是在訓練完成後才產生，不是執行管線前的必要條件。"
   },
   {
     category: "Azure ML 與 AI 服務工具箱",
