@@ -79,6 +79,18 @@ const concepts = [
   },
   {
     category: "五大 AI 核心領域",
+    name: "深度學習",
+    english: "Deep Learning",
+    description: "使用多層神經網路處理複雜資料的機器學習技術，常用於影像辨識、語音辨識與自然語言處理。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "Transformer 架構",
+    english: "Transformer Architecture",
+    description: "現代大型語言模型常用的深度學習架構，擅長處理序列資料與文字上下文，是生成式 AI 的重要基礎。"
+  },
+  {
+    category: "五大 AI 核心領域",
     name: "電腦視覺",
     english: "Computer Vision",
     description: "讓 AI 分析圖片或影片，例如圖片分類、物件偵測、OCR 與臉部偵測。"
@@ -109,6 +121,24 @@ const concepts = [
   },
   {
     category: "五大 AI 核心領域",
+    name: "臉部偵測",
+    english: "Face Detection",
+    description: "在圖片中找出人臉的位置。考試要分清楚：偵測人臉位置不等於辨識某個人的身分。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "臉部分析",
+    english: "Face Analysis",
+    description: "分析臉部相關屬性或特徵。這類功能通常會牽涉隱私、安全與負責任 AI 限制。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "Azure AI Face",
+    english: "Azure AI Face",
+    description: "Azure 上用於臉部偵測與臉部分析的服務。遇到人臉偵測相關題目時要和 Azure AI Vision 區分。"
+  },
+  {
+    category: "五大 AI 核心領域",
     name: "自然語言處理",
     english: "Natural Language Processing / NLP",
     description: "讓 AI 理解、分析或產生人類語言，例如情緒分析、實體辨識、翻譯與語音。"
@@ -130,6 +160,24 @@ const concepts = [
     name: "實體辨識",
     english: "Entity Recognition",
     description: "從文字中找出人名、地點、組織、日期等具體資訊。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "語言模型",
+    english: "Language Modeling",
+    description: "讓模型理解文字上下文並預測或產生文字，是文字生成、補全、摘要與問答的基礎。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "翻譯",
+    english: "Translation",
+    description: "將文字或語音從一種語言轉換成另一種語言，屬於自然語言處理常見工作負載。"
+  },
+  {
+    category: "五大 AI 核心領域",
+    name: "Azure AI Translator",
+    english: "Azure AI Translator",
+    description: "Azure 上用於文字翻譯的服務。遇到多語言文字翻譯情境時可優先聯想到 Translator。"
   },
   {
     category: "五大 AI 核心領域",
@@ -193,6 +241,30 @@ const concepts = [
   },
   {
     category: "Azure ML 與 AI 服務工具箱",
+    name: "Azure Machine Learning",
+    english: "Azure Machine Learning",
+    description: "Azure 上用來建置、訓練、評估、部署與管理機器學習模型的雲端服務，適合自訂模型與完整機器學習生命週期。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "Azure Machine Learning 工作區",
+    english: "Azure Machine Learning Workspace",
+    description: "使用 Azure Machine Learning 的核心資源容器。建立 Automated ML、資料資產、運算資源、實驗、模型與端點之前，通常要先建立工作區。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "資料資產",
+    english: "Data Assets",
+    description: "Azure Machine Learning 中用來註冊、版本控管與重複使用訓練資料的資源。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "運算資源",
+    english: "Compute Resources",
+    description: "Azure Machine Learning 中用來執行訓練、實驗或推論的運算環境，例如 CPU 或 GPU compute。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
     name: "Azure Machine Learning Studio",
     english: "Azure Machine Learning Studio",
     description: "用來建立自訂機器學習模型的平台，適合訓練、管理、部署與監控模型。"
@@ -201,7 +273,7 @@ const concepts = [
     category: "Azure ML 與 AI 服務工具箱",
     name: "自動化機器學習",
     english: "Automated Machine Learning",
-    description: "適合不想寫程式的人。丟入數據後，系統自動嘗試多種演算法，找出較佳模型。"
+    description: "適合不想寫程式的人。通常在 Azure Machine Learning workspace 中建立，丟入數據後，系統自動嘗試多種演算法，找出較佳模型。"
   },
   {
     category: "Azure ML 與 AI 服務工具箱",
@@ -214,6 +286,24 @@ const concepts = [
     name: "管線",
     english: "Pipeline",
     description: "將資料處理、訓練、評估與部署等步驟串接成可重複執行的機器學習流程。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "模型管理",
+    english: "Model Management",
+    description: "在 Azure Machine Learning 中註冊、版本控管、追蹤與管理已訓練模型的能力。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "模型部署",
+    english: "Model Deployment",
+    description: "將已訓練模型部署成可被應用程式呼叫的服務，讓模型能用於實際推論。"
+  },
+  {
+    category: "Azure ML 與 AI 服務工具箱",
+    name: "端點",
+    english: "Endpoint",
+    description: "模型部署後提供給應用程式呼叫的入口。考題常會把部署模型與建立端點放在一起考。"
   },
   {
     category: "Azure ML 與 AI 服務工具箱",
@@ -307,6 +397,12 @@ const concepts = [
   },
   {
     category: "生成式 AI 與 Azure OpenAI",
+    name: "Azure OpenAI DALL-E 模型",
+    english: "Azure OpenAI DALL-E Model",
+    description: "Azure OpenAI Service 中可用於文字轉圖像的模型。看到 Azure OpenAI 產生圖片、插圖、卡通或設計草圖時，可聯想到 DALL-E。"
+  },
+  {
+    category: "生成式 AI 與 Azure OpenAI",
     name: "文字轉圖像",
     english: "Text-to-Image",
     description: "根據文字提示產生圖像，是 DALL-E 類模型的代表能力。"
@@ -376,6 +472,12 @@ const concepts = [
     name: "Azure AI Foundry",
     english: "Azure AI Foundry",
     description: "用來建置、測試、部署與管理生成式 AI 應用的平台。"
+  },
+  {
+    category: "生成式 AI 與 Azure OpenAI",
+    name: "Azure AI Foundry 模型目錄",
+    english: "Azure AI Foundry Model Catalog",
+    description: "Azure AI Foundry 中用來瀏覽、比較、選擇與部署不同 AI 模型的模型目錄。"
   }
 ];
 
@@ -394,6 +496,7 @@ let speechRunId = 0;
 const els = {
   categoryText: document.querySelector("#categoryText"),
   englishText: document.querySelector("#englishText"),
+  conceptCountText: document.querySelector("#conceptCountText"),
   voiceStatus: document.querySelector("#voiceStatus"),
   conceptCategory: document.querySelector("#conceptCategory"),
   conceptName: document.querySelector("#conceptName"),
@@ -417,6 +520,7 @@ function renderTopics() {
 }
 
 function renderConcepts() {
+  els.conceptCountText.textContent = `${concepts.length} 個`;
   els.conceptList.innerHTML = concepts
     .map((item, index) => `
       <button class="concept-btn" type="button" data-index="${index}">
@@ -548,6 +652,72 @@ function speak(text) {
     window.speechSynthesis.speak(utterance);
   }, 140);
 }
+
+function pickPreferredVoice() {
+  if (!("speechSynthesis" in window)) {
+    return null;
+  }
+
+  const voices = window.speechSynthesis.getVoices();
+  const preferredNames = ["HsiaoChen", "Hanhan", "Yating", "Microsoft HsiaoChen", "Microsoft Hanhan", "Google 國語"];
+
+  return voices.find((voice) => preferredNames.some((name) => voice.name.includes(name)))
+    || voices.find((voice) => voice.lang === "zh-TW")
+    || voices.find((voice) => voice.lang.startsWith("zh"))
+    || null;
+}
+
+const previousSpeak = speak;
+function speakWithBrightVoice(text) {
+  if (!("speechSynthesis" in window)) {
+    els.feedback.textContent = "這個瀏覽器不支援語音朗讀。";
+    return;
+  }
+
+  stopSpeech("準備朗讀...");
+  const runId = speechRunId;
+
+  speechTimer = window.setTimeout(() => {
+    if (runId !== speechRunId) {
+      return;
+    }
+
+    speechTimer = null;
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    const preferredVoice = pickPreferredVoice();
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+      utterance.lang = preferredVoice.lang;
+    } else {
+      utterance.lang = "zh-TW";
+    }
+    utterance.rate = 0.96;
+    utterance.pitch = 1.28;
+    utterance.volume = 1;
+    utterance.onstart = () => {
+      if (runId === speechRunId) {
+        els.voiceStatus.textContent = "明亮朗讀中";
+      }
+    };
+    utterance.onend = () => {
+      if (runId === speechRunId) {
+        els.voiceStatus.textContent = "點擊朗讀";
+      }
+    };
+    utterance.onerror = () => {
+      if (runId === speechRunId) {
+        els.voiceStatus.textContent = "點擊朗讀";
+        els.feedback.textContent = "朗讀被中止，可以再點一次概念。";
+      }
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }, 160);
+}
+
+speak = speakWithBrightVoice;
 
 els.stopBtn.addEventListener("click", () => {
   stopSpeech();
